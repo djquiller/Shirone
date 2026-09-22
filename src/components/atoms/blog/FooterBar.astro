@@ -40,7 +40,6 @@ const {
 <footer class:list={["m3-blog-footer", className]}>
   <div class="m3-blog-footer__divider" aria-hidden="true"></div>
   <div class="m3-blog-footer__inner">
-    {customHtml && <div class="m3-blog-footer__custom" set:html={customHtml} />}
     <p class="m3-blog-footer__text">版权所有 &copy; {year} {name}</p>
     <p class="m3-blog-footer__text">
       {
@@ -133,6 +132,7 @@ const {
       }
     </p>
   </div>
+  {customHtml && <div class="m3-blog-footer__custom" set:html={customHtml} />}
 
   <style lang="stylus">
 .m3-blog-footer
