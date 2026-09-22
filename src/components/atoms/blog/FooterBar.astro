@@ -41,30 +41,29 @@ const {
   <div class="m3-blog-footer__divider" aria-hidden="true"></div>
   <div class="m3-blog-footer__inner">
     <p class="m3-blog-footer__text">版权所有 &copy; {year} {name}</p>
-    <p class="m3-blog-footer__text">
-      {
-        poweredBy.length > 0 && (
-          <p class="m3-blog-footer__text">
-            由{" "}
-            {poweredBy.map((l, i) => (
-              <Fragment>
-                {i > 0 && (
-                  <span class="m3-blog-footer__sep" aria-hidden="true">
-                    &amp;
-                  </span>
-                )}
-                <a
-                  class="m3-blog-footer__link"
-                  href={l.href}
-                  target={l.external ? "_blank" : undefined}
-                  rel={l.external ? "noopener noreferrer" : undefined}
-                >
-                  {l.label}
-                </a>
-              </Fragment>
-            ))}{" "}
-            驱动
-            {/*
+    {
+      poweredBy.length > 0 && (
+        <p class="m3-blog-footer__text">
+          由{" "}
+          {poweredBy.map((l, i) => (
+            <Fragment>
+              {i > 0 && (
+                <span class="m3-blog-footer__sep" aria-hidden="true">
+                  &amp;
+                </span>
+              )}
+              <a
+                class="m3-blog-footer__link"
+                href={l.href}
+                target={l.external ? "_blank" : undefined}
+                rel={l.external ? "noopener noreferrer" : undefined}
+              >
+                {l.label}
+              </a>
+            </Fragment>
+          ))}{" "}
+          驱动
+          {/*
               {version && (
                 <Fragment>
                   <span class="m3-blog-footer__sep" aria-hidden="true">
@@ -88,28 +87,27 @@ const {
                 </Fragment>
               )}
             */}
-            {hostedOn.length > 0 && (
-              <Fragment>
-                <span class="m3-blog-footer__sep" aria-hidden="true">
-                  ·
-                </span>
-                <span>托管于 </span>
-                {hostedOn.map((l) => (
-                  <a
-                    class="m3-blog-footer__link"
-                    href={l.href}
-                    target={l.external ? "_blank" : undefined}
-                    rel={l.external ? "noopener noreferrer" : undefined}
-                  >
-                    {l.label}
-                  </a>
-                ))}
-              </Fragment>
-            )}
-          </p>
-        )
-      }
-    </p>
+          {hostedOn.length > 0 && (
+            <Fragment>
+              <span class="m3-blog-footer__sep" aria-hidden="true">
+                ·
+              </span>
+              <span>托管于 </span>
+              {hostedOn.map((l) => (
+                <a
+                  class="m3-blog-footer__link"
+                  href={l.href}
+                  target={l.external ? "_blank" : undefined}
+                  rel={l.external ? "noopener noreferrer" : undefined}
+                >
+                  {l.label}
+                </a>
+              ))}
+            </Fragment>
+          )}
+        </p>
+      )
+    }
     <p class="m3-blog-footer__text">
       {
         links.map((l, i) => (
@@ -131,8 +129,8 @@ const {
         ))
       }
     </p>
+    {customHtml && <div class="m3-blog-footer__custom" set:html={customHtml} />}
   </div>
-  {customHtml && <div class="m3-blog-footer__custom" set:html={customHtml} />}
 
   <style lang="stylus">
 .m3-blog-footer
