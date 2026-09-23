@@ -91,7 +91,6 @@
     "hast-util-from-html": "2.0.3",
     "hastscript": "^9.0.1",
     "katex": "^0.16.47",
-    "lxgw-wenkai-screen-webfont": "^1.7.0",
     "markdown-it": "^14.3.1",
     "mdast-util-to-string": "^4.0.0",
     "mermaid": "^11.17.2",
